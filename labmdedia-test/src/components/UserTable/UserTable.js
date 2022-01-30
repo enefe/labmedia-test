@@ -19,7 +19,7 @@ function UserTable(props) {
             <tbody>
                 {props.users.map((item) => {
                     return (
-                        <User user={item} key={item.id} active={props.active} setActive={props.setActive} onUserDelete={props.onUserDelete} />
+                        <User user={item} key={item.id} handleDelete={props.handleDelete} />
                     )
                 })}
             </tbody>

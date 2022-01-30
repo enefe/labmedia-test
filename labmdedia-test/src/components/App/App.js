@@ -3,6 +3,7 @@ import React from 'react';
 import './App.css';
 
 import List from '../List/List';
+import Popup from '../Popup/Popup';
 
 import {apiUsers} from '../../utils/Api';
 
@@ -46,14 +47,14 @@ function App() {
     return setPage(numberPage);
   }
 
-  // Удаление пользователя:
+/*   // Удаление пользователя:
 
   function handleUserDelete(user) {
     const userId = user.id;
     setUsers(users.filter((item) => {
       return item.id !== userId;
     }));
-  }
+  } */
 
   // Сортировка:
 
@@ -76,15 +77,40 @@ function App() {
 
   // Попап:
 
-  const [active, setActive] = React.useState(false); // - активность модального окна
+  const [popup, setPopup] = React.useState({ // - активность модального окна и id пользователя
+    active: false, 
+    id: null,
+  });
 
-  const [searchActive, setSearchActive] = React.useState(false);
+  const handleDelete = (id) => {
+    setPopup({
+      active: true,
+      id,
+    });
+  };
+
+  const handleDeleteTrue = () => { // - нажатие на кнопку "Да" в попапе
+    if (popup.active && popup.id) {
+      let filteredData = users.filter((item) => item.id !== popup.id); // - если id совпадают, то удаляем
+      setUsers(filteredData);
+      setPopup({
+        active: false,
+        id: null,
+      });
+    }
+  };
+
+  const handleDeleteFalse = () => { // - нажатие на кнопку "Нет" в попапе
+    setPopup({
+      active: false,
+      id: null,
+    });
+  };
 
   return (
     <div className="page">
       <List 
         users={currentPage} 
-        onUserDelete={handleUserDelete} 
         setValue={setValue} 
         usersOnPage={usersOnPage} 
         totalUsers={totalUsers} 
@@ -92,10 +118,16 @@ function App() {
         page={page}
         sort={sort}
         setDirectionSort={setDirectionSort}
-        active={active}
-        setActive={setActive}
-        setSearchActive={setSearchActive}
+        handleDeleteTrue={handleDeleteTrue}
+        handleDeleteFalse={handleDeleteFalse}
+        handleDelete={handleDelete}
       />
+      {popup.active && (
+        <Popup
+          handleDeleteTrue={handleDeleteTrue}
+          handleDeleteFalse={handleDeleteFalse}
+        />
+      )}
     </div>
   );
 }

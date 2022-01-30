@@ -5,11 +5,9 @@ import '../Popup/Popup.css';
 function User(props) {
 
     // Удаление пользователя:
-
-    const clickDelete = () => {
-        props.onUserDelete(props.user);
-        /* props.setActive(true); */
-    }
+     const clickDelete = () => {
+        props.handleDelete(props.user.id);
+    } 
 
     return (
             <tr>
