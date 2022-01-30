@@ -1,0 +1,20 @@
+.table__user {
+    width: 200px;
+    height: 50px;
+    font-size: 16px;
+    text-align: center;
+    /* box-shadow: 0 5px 10px -5px #F66F89; */
+}
+
+.table__user_delete {
+    cursor: pointer;
+    transition: transform .3s ease;
+}
+
+.table__user_delete:hover {
+    transform: scale(1.5);
+}
+
+tr {
+    box-shadow: 0 5px 10px -5px #F66F89;
+}

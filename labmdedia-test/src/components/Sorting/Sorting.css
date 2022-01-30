@@ -1,0 +1,36 @@
+.sorting {
+    display: flex;
+}
+
+.sorting__title {
+    padding: 30px;
+    margin: 0;
+    font-size: 20px;
+}
+
+.sorting__date {
+    display: inline-block;
+    font-size: 13px;
+    background-color: #7C71D8;
+    border: 0;
+    border-radius: 2%;
+    width: 150px;
+    height: 20px;
+    padding: 0;
+    margin: 30px 0;
+    cursor: pointer;
+    opacity: .8;
+}
+
+.sorting__rating {
+    font-size: 13px;
+    background-color: #7C71D8;
+    border: 0;
+    border-radius: 2%;
+    width: 150px;
+    height: 20px;
+    padding: 0;
+    margin: 30px;
+    cursor: pointer;
+    opacity: .8;
+}

@@ -1,0 +1,28 @@
+.pages{
+    width: 25px;
+    height: 25px;
+    margin-right: 15px;
+    /* border: 1px solid #F66F89; */
+    border-radius: 5%;
+    box-shadow: 0 5px 10px -5px #F66F89;
+    list-style-type: none;
+    cursor: pointer;
+    text-align: center;
+    transition: transform .3s ease;
+}
+
+.pages:hover {
+    transform: scale(1.08);
+}
+
+.pages__link {
+    text-decoration: none;
+    color: #7C71D8;
+    font-size: 20px;
+}
+
+.pages__link_active {
+    text-decoration: none;
+    color: #F66F89;
+    font-size: 22px;
+}

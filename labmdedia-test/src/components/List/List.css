@@ -1,0 +1,11 @@
+.list {
+    /* background-color: #F66F89; */
+    margin: 0;
+    height: 100vh;
+}
+
+.list__title {
+    padding: 30px;
+    margin: 0;
+    font-size: 30px;
+}
